@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scaffolded Goal Setting — Solution 1</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Solution 1</p>
+        <h1>Scaffolded Goal Setting</h1>
+        <p class="lede">
+          A structured 10‑week pathway that helps learners set goals, monitor progress,
+          and grow autonomy over time.
+        </p>
+        <div class="hero__actions">
+          <button class="btn btn--primary" id="jump-timeline">Explore the 10‑Week Scaffold</button>
+          <button class="btn btn--ghost" id="jump-goals">See Goal Types</button>
+          <button class="btn btn--ghost" id="jump-justifications">See Justifications</button>
+        </div>
+      </div>
+      <div class="hero__card">
+        <h2>Why It Works</h2>
+        <p>
+          Goal setting boosts motivation for children, adolescents, and adults when support
+          is gradually released and progress is visible.
+        </p>
+        <div class="pill">Evidence‑aligned</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="goal-types">
+        <div class="section__header">
+          <h2>Goal Types</h2>
+          <p>Balance short‑term performance goals with long‑term learning goals.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>Performance Goals</h3>
+            <p class="tag">Weekly · Short‑term</p>
+            <p>Examples:</p>
+            <ul>
+              <li>Complete pre‑class reading</li>
+              <li>Attempt a tutorial question</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Learning Goals</h3>
+            <p class="tag">Semester · Long‑term</p>
+            <p>Examples:</p>
+            <ul>
+              <li>Cook a dish</li>
+              <li>Bake a pastry</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="timeline">
+        <div class="section__header">
+          <h2>10‑Week Scaffolding Timeline</h2>
+          <p>Move from co‑construction to learner independence.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline__rail" aria-hidden="true"></div>
+          <div class="timeline__steps" role="tablist" aria-label="Weeks">
+            <button class="step is-active" data-week="1" role="tab">Week 1</button>
+            <button class="step" data-week="2" role="tab">Week 2</button>
+            <button class="step" data-week="3" role="tab">Week 3</button>
+            <button class="step" data-week="4" role="tab">Week 4</button>
+            <button class="step" data-week="5" role="tab">Week 5</button>
+            <button class="step" data-week="6" role="tab">Week 6</button>
+            <button class="step" data-week="7" role="tab">Week 7</button>
+            <button class="step" data-week="8" role="tab">Week 8</button>
+            <button class="step" data-week="9" role="tab">Week 9</button>
+            <button class="step" data-week="10" role="tab">Week 10</button>
+          </div>
+        </div>
+
+        <div class="timeline__panel" id="timeline-panel" role="tabpanel">
+          <!-- content injected by JS -->
+        </div>
+      </section>
+
+      <section class="section" id="monitoring">
+        <div class="section__header">
+          <h2>Goal Monitoring Loop</h2>
+          <p>Make progress visible with a simple repeatable routine.</p>
+        </div>
+        <div class="loop">
+          <div class="loop__node">
+            <span class="loop__label">Set</span>
+            <p>Define weekly performance and semester learning goals.</p>
+          </div>
+          <div class="loop__node">
+            <span class="loop__label">Track</span>
+            <p>Log evidence of progress each week.</p>
+          </div>
+          <div class="loop__node">
+            <span class="loop__label">Reflect</span>
+            <p>Review what worked and revise strategies.</p>
+          </div>
+          <div class="loop__node">
+            <span class="loop__label">Celebrate</span>
+            <p>Recognize progress and reinforce autonomy.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="justifications">
+        <div class="section__header">
+          <h2>Justification Linkages</h2>
+          <p>Connect personal processes to how the solution supports learning outcomes.</p>
+        </div>
+        <div class="mapping">
+          <div class="mapping__list" role="tablist" aria-label="Personal processes">
+            <button class="mapping__item is-active" data-just="self-eval" role="tab">Goals of Self‑Evaluation of Progress</button>
+            <button class="mapping__item" data-just="self-efficacy" role="tab">Self‑efficacy</button>
+            <button class="mapping__item" data-just="social" role="tab">Social comparisons</button>
+            <button class="mapping__item" data-just="values" role="tab">Values</button>
+            <button class="mapping__item" data-just="outcome" role="tab">Outcome Expectation</button>
+            <button class="mapping__item" data-just="attributions" role="tab">Attributions</button>
+          </div>
+          <div class="mapping__panel" id="mapping-panel" role="tabpanel">
+            <!-- content injected by JS -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="goal-tracker">
+        <div class="section__header">
+          <h2>Student Goal Tracker</h2>
+          <p>Students can set their learning goal and weekly performance goals, then track progress over time.</p>
+        </div>
+        <div class="tracker">
+          <form class="tracker__form" id="goal-form">
+            <div class="field">
+              <label for="learning-goal">Learning Goal (long‑term)</label>
+              <input type="text" id="learning-goal" name="learning-goal" placeholder="e.g., Bake a pastry by Week 10" required />
+            </div>
+            <div class="field">
+              <label for="performance-goal">Performance Goal (this week)</label>
+              <input type="text" id="performance-goal" name="performance-goal" placeholder="e.g., Complete pre‑class reading" required />
+            </div>
+            <div class="field field--inline">
+              <label for="week">Week</label>
+              <select id="week" name="week">
+                <option value="1">Week 1</option>
+                <option value="2">Week 2</option>
+                <option value="3">Week 3</option>
+                <option value="4">Week 4</option>
+                <option value="5">Week 5</option>
+                <option value="6">Week 6</option>
+                <option value="7">Week 7</option>
+                <option value="8">Week 8</option>
+                <option value="9">Week 9</option>
+                <option value="10">Week 10</option>
+              </select>
+            </div>
+            <button class="btn btn--primary" type="submit">Add Goal</button>
+          </form>
+
+          <div class="tracker__panel">
+            <div class="tracker__summary">
+              <h3>Progress Snapshot</h3>
+              <p id="summary-text">No goals tracked yet.</p>
+              <div class="progress">
+                <div class="progress__bar" id="progress-bar" style="width: 0%"></div>
+              </div>
+            </div>
+
+            <div class="tracker__list" id="goal-list">
+              <!-- goals injected by JS -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <h3>Implementation Notes</h3>
+        <p>
+          This scaffold aligns with the progression: demonstration → guided application →
+          fading support → evaluation over a 10‑week course.
+        </p>
+      </div>
+      <div class="footer__badge">Scaffolded Goal Setting</div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
