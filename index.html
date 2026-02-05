@@ -147,6 +147,10 @@
               <label for="performance-goal">Performance Goal (this week)</label>
               <input type="text" id="performance-goal" name="performance-goal" placeholder="e.g., Complete pre‑class reading" required />
             </div>
+            <div class="field">
+              <label for="goal-comment">Comment (reflection or plan)</label>
+              <textarea id="goal-comment" name="goal-comment" rows="3" placeholder="e.g., I will use the Pomodoro method and ask a friend for help."></textarea>
+            </div>
             <div class="field field--inline">
               <label for="week">Week</label>
               <select id="week" name="week">
@@ -169,8 +173,11 @@
             <div class="tracker__summary">
               <h3>Progress Snapshot</h3>
               <p id="summary-text">No goals tracked yet.</p>
-              <div class="progress">
-                <div class="progress__bar" id="progress-bar" style="width: 0%"></div>
+              <div class="snapshot">
+                <div class="pie" id="progress-pie" role="img" aria-label="Progress pie chart"></div>
+                <div class="progress">
+                  <div class="progress__bar" id="progress-bar" style="width: 0%"></div>
+                </div>
               </div>
             </div>
 

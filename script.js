@@ -153,6 +153,7 @@ const goalForm = document.getElementById('goal-form');
 const goalList = document.getElementById('goal-list');
 const summaryText = document.getElementById('summary-text');
 const progressBar = document.getElementById('progress-bar');
+const progressPie = document.getElementById('progress-pie');
 
 const storageKey = 'scaffolded-goal-tracker';
 
@@ -169,6 +170,9 @@ function updateSummary(goals) {
   if (goals.length === 0) {
     summaryText.textContent = 'No goals tracked yet.';
     progressBar.style.width = '0%';
+    if (progressPie) {
+      progressPie.style.background = 'conic-gradient(var(--accent) 0deg, var(--accent) 0deg, #efe9e1 0deg)';
+    }
     return;
   }
 
@@ -176,6 +180,10 @@ function updateSummary(goals) {
   const percentage = Math.round((completed / goals.length) * 100);
   summaryText.textContent = `${completed} of ${goals.length} performance goals completed (${percentage}%).`;
   progressBar.style.width = `${percentage}%`;
+  if (progressPie) {
+    const degrees = Math.round((percentage / 100) * 360);
+    progressPie.style.background = `conic-gradient(var(--accent) 0deg, var(--accent) ${degrees}deg, #efe9e1 ${degrees}deg)`;
+  }
 }
 
 function renderGoals() {
@@ -201,6 +209,7 @@ function renderGoals() {
       <div>
         <strong>Performance goal:</strong> ${goal.performance}
       </div>
+      ${goal.comment ? `<div class="goal-card__comment">Comment: ${goal.comment}</div>` : ''}
       <div class="goal-card__actions">
         <button class="btn btn--ghost btn--small" data-action="toggle" data-id="${goal.id}">
           ${goal.completed ? 'Mark Incomplete' : 'Mark Complete'}
@@ -219,6 +228,7 @@ function addGoal(event) {
   const formData = new FormData(goalForm);
   const learning = formData.get('learning-goal').trim();
   const performance = formData.get('performance-goal').trim();
+  const comment = (formData.get('goal-comment') || '').trim();
   const week = formData.get('week');
 
   if (!learning || !performance) return;
@@ -229,6 +239,7 @@ function addGoal(event) {
     learning,
     performance,
     week,
+    comment,
     completed: false,
   });
   saveGoals(goals);
