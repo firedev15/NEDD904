@@ -17,9 +17,7 @@
           and grow autonomy over time.
         </p>
         <div class="hero__actions">
-          <button class="btn btn--primary" id="jump-timeline">Explore the 10‑Week Scaffold</button>
           <button class="btn btn--ghost" id="jump-goals">See Goal Types</button>
-          <button class="btn btn--ghost" id="jump-justifications">See Justifications</button>
         </div>
       </div>
       <div class="hero__card">
@@ -60,77 +58,7 @@
         </div>
       </section>
 
-      <section class="section" id="timeline">
-        <div class="section__header">
-          <h2>10‑Week Scaffolding Timeline</h2>
-          <p>Move from co‑construction to learner independence.</p>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline__rail" aria-hidden="true"></div>
-          <div class="timeline__steps" role="tablist" aria-label="Weeks">
-            <button class="step is-active" data-week="1" role="tab">Week 1</button>
-            <button class="step" data-week="2" role="tab">Week 2</button>
-            <button class="step" data-week="3" role="tab">Week 3</button>
-            <button class="step" data-week="4" role="tab">Week 4</button>
-            <button class="step" data-week="5" role="tab">Week 5</button>
-            <button class="step" data-week="6" role="tab">Week 6</button>
-            <button class="step" data-week="7" role="tab">Week 7</button>
-            <button class="step" data-week="8" role="tab">Week 8</button>
-            <button class="step" data-week="9" role="tab">Week 9</button>
-            <button class="step" data-week="10" role="tab">Week 10</button>
-          </div>
-        </div>
-
-        <div class="timeline__panel" id="timeline-panel" role="tabpanel">
-          <!-- content injected by JS -->
-        </div>
-      </section>
-
-      <section class="section" id="monitoring">
-        <div class="section__header">
-          <h2>Goal Monitoring Loop</h2>
-          <p>Make progress visible with a simple repeatable routine.</p>
-        </div>
-        <div class="loop">
-          <div class="loop__node">
-            <span class="loop__label">Set</span>
-            <p>Define weekly performance and semester learning goals.</p>
-          </div>
-          <div class="loop__node">
-            <span class="loop__label">Track</span>
-            <p>Log evidence of progress each week.</p>
-          </div>
-          <div class="loop__node">
-            <span class="loop__label">Reflect</span>
-            <p>Review what worked and revise strategies.</p>
-          </div>
-          <div class="loop__node">
-            <span class="loop__label">Celebrate</span>
-            <p>Recognize progress and reinforce autonomy.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="justifications">
-        <div class="section__header">
-          <h2>Justification Linkages</h2>
-          <p>Connect personal processes to how the solution supports learning outcomes.</p>
-        </div>
-        <div class="mapping">
-          <div class="mapping__list" role="tablist" aria-label="Personal processes">
-            <button class="mapping__item is-active" data-just="self-eval" role="tab">Goals of Self‑Evaluation of Progress</button>
-            <button class="mapping__item" data-just="self-efficacy" role="tab">Self‑efficacy</button>
-            <button class="mapping__item" data-just="social" role="tab">Social comparisons</button>
-            <button class="mapping__item" data-just="values" role="tab">Values</button>
-            <button class="mapping__item" data-just="outcome" role="tab">Outcome Expectation</button>
-            <button class="mapping__item" data-just="attributions" role="tab">Attributions</button>
-          </div>
-          <div class="mapping__panel" id="mapping-panel" role="tabpanel">
-            <!-- content injected by JS -->
-          </div>
-        </div>
-      </section>
+      
 
       <section class="section" id="goal-tracker">
         <div class="section__header">
@@ -141,15 +69,15 @@
           <form class="tracker__form" id="goal-form">
             <div class="field">
               <label for="learning-goal">Learning Goal (long‑term)</label>
-              <input type="text" id="learning-goal" name="learning-goal" placeholder="e.g., Bake a pastry by Week 10" required />
+              <input type="text" id="learning-goal" name="learning-goal" required />
             </div>
             <div class="field">
               <label for="performance-goal">Performance Goal (this week)</label>
-              <input type="text" id="performance-goal" name="performance-goal" placeholder="e.g., Complete pre‑class reading" required />
+              <input type="text" id="performance-goal" name="performance-goal" required />
             </div>
             <div class="field">
               <label for="goal-comment">Comment (reflection or plan)</label>
-              <textarea id="goal-comment" name="goal-comment" rows="3" placeholder="e.g., I will use the Pomodoro method and ask a friend for help."></textarea>
+              <textarea id="goal-comment" name="goal-comment" rows="3"></textarea>
             </div>
             <div class="field field--inline">
               <label for="week">Week</label>
@@ -184,7 +112,24 @@
             <div class="tracker__list" id="goal-list">
               <!-- goals injected by JS -->
             </div>
+
+            <div class="tracker__comments">
+              <h3>Student Comments</h3>
+              <div id="comment-list" class="comment-list">
+                <!-- comments injected by JS -->
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <section class="section" id="teacher-remarks">
+        <div class="section__header">
+          <h2>Teachers Remark</h2>
+          <p>Space for teacher feedback, encouragement, and next steps.</p><br>
+        </div>
+        <div class="teacher-remark">
+          <p><strong>Sample Feedback: <br>Week 4 update:</strong> Great progress on your weekly reading goals. Next week, try pairing your reading with a short reflection to deepen understanding.</p>
         </div>
       </section>
     </main>
@@ -193,7 +138,7 @@
       <div>
         <h3>Implementation Notes</h3>
         <p>
-          This scaffold aligns with the progression: demonstration → guided application →
+          This scaffold aligns with the progression: <br>demonstration → guided application →
           fading support → evaluation over a 10‑week course.
         </p>
       </div>
